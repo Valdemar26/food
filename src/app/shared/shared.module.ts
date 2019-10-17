@@ -6,7 +6,6 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { SharedComponent } from './shared.component';
 import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
-import {MainModule} from './main/main.module';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 
@@ -21,7 +20,6 @@ import { NotfoundComponent } from './notfound/notfound.component';
     RouterModule,
     SharedRoutingModule,
     HeaderModule,
-    MainModule
   ],
   exports: [
     SharedComponent
