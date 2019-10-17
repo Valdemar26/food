@@ -1,0 +1,19 @@
+nav {
+  ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+
+    li {
+        cursor: pointer;
+      a {
+        text-decoration: none;
+        &.active {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+
