@@ -10,7 +10,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [RestaurantComponent],
+  declarations: [
+    RestaurantComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)

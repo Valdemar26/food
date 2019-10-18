@@ -11,6 +11,16 @@ const routes: Routes = [
   { path: 'rations', loadChildren: () => import(`./rations/rations.module`).then(m => m.RationsModule) },
   { path: 'contacts', loadChildren: () => import(`./contacts/contacts.module`).then(m => m.ContactsModule) },
   { path: 'delivery', loadChildren: () => import(`./delivery/delivery.module`).then(m => m.DeliveryModule) },
+  {
+    path: 'basket-rations',
+    loadChildren: () => import(`./rations/components/ration-basket/ration-basket.module`)
+      .then(m => m.RationBasketModule)
+  },
+  {
+    path: 'basket-restaurant',
+    loadChildren: () => import(`./restaurant/components/restaurant-basket/restaurant-basket.module`)
+      .then(m => m.RestaurantBasketModule)
+  },
   { path: '**', component: NotfoundComponent }
 ];
 

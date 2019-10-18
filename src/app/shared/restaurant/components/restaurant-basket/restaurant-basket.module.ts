@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RationsComponent } from './rations.component';
 import { RouterModule, Routes } from '@angular/router';
+import { RestaurantBasketComponent } from './restaurant-basket.component';
 
 const routes: Routes = [
   {
-    path: '',  component: RationsComponent
+    path: '',  component: RestaurantBasketComponent
   }
 ];
 
 @NgModule({
-  declarations: [RationsComponent],
+  declarations: [RestaurantBasketComponent],
   imports: [
+    CommonModule,
     RouterModule.forChild(routes),
-    CommonModule
-  ],
+  ]
 })
-export class RationsModule { }
+export class RestaurantBasketModule { }
