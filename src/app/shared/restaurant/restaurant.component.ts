@@ -15,6 +15,7 @@ export class RestaurantComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDishes();
+    console.log('RestaurantComponent');
   }
 
   getDishes(): void {

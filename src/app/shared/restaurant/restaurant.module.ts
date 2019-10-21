@@ -6,12 +6,12 @@ import { RestaurantComponent } from './restaurant.component';
 
 
 const routes: Routes = [
-  {path: '',  component: RestaurantComponent, children: [
-      {
-        path: '/:id',
-        loadChildren: () => import(`../components/dish-preview/dish.module`)
-          .then(m => m.DishModule)
-      },
+  {path: '',  component: RestaurantComponent,  children: [
+      // {
+      //   path: '/:id',
+      //   loadChildren: () => import(`../components/dish-preview/dish.module`)
+      //     .then(m => m.DishModule)
+      // },
     ]}
 ];
 
@@ -20,8 +20,8 @@ const routes: Routes = [
     RestaurantComponent
   ],
   imports: [
+    RouterModule.forChild(routes),
     CommonModule,
-    RouterModule.forChild(routes)
   ]
 })
 export class RestaurantModule { }

@@ -1,0 +1,37 @@
+.bread-crumb {
+  margin: 20px auto auto 10px;
+}
+
+.dish-item-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin: 20px 10px 10px 10px;
+  grid-gap: 10px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    h2 {
+      align-self: center;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .price {
+
+    }
+
+    .submit {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

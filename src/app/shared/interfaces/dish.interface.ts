@@ -1,7 +1,7 @@
 export interface DishInterface {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  imageUrl: string;
+  id?: number;
+  name?: string;
+  description?: string;
+  price?: number;
+  imageUrl?: string;
 }
