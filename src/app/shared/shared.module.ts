@@ -7,13 +7,15 @@ import { SharedComponent } from './shared.component';
 import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import {DishComponent} from './components/dish-preview/dish/dish.component';
 
 
 @NgModule({
   declarations: [
     SharedComponent,
     FooterComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    // DishComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     HeaderModule,
   ],
   exports: [
-    SharedComponent
+    SharedComponent,
+    // DishComponent
   ]
 })
 export class SharedModule { }

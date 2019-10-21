@@ -6,11 +6,19 @@ import { RestaurantComponent } from './restaurant.component';
 
 
 const routes: Routes = [
-  {path: '',  component: RestaurantComponent}
+  {path: '',  component: RestaurantComponent, children: [
+      {
+        path: '/:id',
+        loadChildren: () => import(`../components/dish-preview/dish.module`)
+          .then(m => m.DishModule)
+      },
+    ]}
 ];
 
 @NgModule({
-  declarations: [RestaurantComponent],
+  declarations: [
+    RestaurantComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)

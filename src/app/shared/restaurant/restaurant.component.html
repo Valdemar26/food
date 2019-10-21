@@ -1,1 +1,16 @@
-<p>restaurant works!</p>
+
+<div class="restaurant-list-wrapper">
+  <ng-container *ngFor="let dish of dishes; let index = index">
+    <div class="dish-preview-wrapper">
+      <h2 class="title">{{dish.name}}</h2>
+      <a [routerLink]="['/restaurant', dish.id ]">
+        <img [src]="dish.imageUrl" alt="">
+      </a>
+      <p class="price">{{dish.price}} грн.</p>
+      <div class="counter"></div>
+      <button>Додати у кошик</button>
+    </div>
+  </ng-container>
+</div>
+
+
