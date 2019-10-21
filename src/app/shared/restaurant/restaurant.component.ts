@@ -10,11 +10,14 @@ import { DishInterface } from '../interfaces/dish.interface';
 })
 export class RestaurantComponent implements OnInit {
   dishes: DishInterface[];
+  isMenuOpened = false;
+  dishesMenuName: any = ['Сніданки', 'Брускети', 'Салати', 'Супи', 'Основні', 'Бургери'];
 
   constructor(private dishesService: DishesService) { }
 
   ngOnInit(): void {
     this.getDishes();
+    console.log('RestaurantComponent');
   }
 
   getDishes(): void {
@@ -27,6 +30,10 @@ export class RestaurantComponent implements OnInit {
           console.log(data);
           this.dishes = data;
         });
+  }
+
+  dishesMenuToggle() {
+    this.isMenuOpened = !this.isMenuOpened;
   }
 
 }

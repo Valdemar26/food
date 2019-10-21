@@ -10,6 +10,7 @@ export class DishPreviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('DishPreviewComponent');
   }
 
 }

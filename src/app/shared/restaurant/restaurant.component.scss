@@ -1,3 +1,24 @@
+.wrapper {
+  .menu {
+    .accordion {
+      ul {
+        display: flex;
+        flex-direction: row;
+        li {
+          margin: auto 5px;
+          cursor: pointer;
+          &:hover {
+            color: #bab075;
+          }
+        }
+      }
+      &.opened {
+        transition: all 0.5s ease-out;
+      }
+    }
+  }
+}
+
 .restaurant-list-wrapper {
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 1fr));
