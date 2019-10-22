@@ -7,6 +7,7 @@ import { SharedComponent } from './shared.component';
 import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -14,17 +15,16 @@ import { NotfoundComponent } from './notfound/notfound.component';
     SharedComponent,
     FooterComponent,
     NotfoundComponent,
-    // DishComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     SharedRoutingModule,
     HeaderModule,
+    FormsModule,
   ],
   exports: [
     SharedComponent,
-    // DishComponent
   ]
 })
 export class SharedModule { }

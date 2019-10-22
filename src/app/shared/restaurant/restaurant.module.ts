@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { RestaurantComponent } from './restaurant.component';
+import { FormsModule } from '@angular/forms';
+import { CounterComponent } from '../components/counter/counter.component';
+import {CounterModule} from '../components/counter/counter.module';
 
 
 const routes: Routes = [
@@ -17,11 +20,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    RestaurantComponent
+    RestaurantComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
+    FormsModule,
+    CounterModule
   ]
 })
 export class RestaurantModule { }

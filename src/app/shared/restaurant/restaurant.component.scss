@@ -57,12 +57,21 @@
       margin: 10px auto;
     }
 
+    button {
+      &.disabled {
+        opacity: .5;
+        cursor: not-allowed;
+      }
+    }
+
     a {
       width: 100%;
 
       img {
         width: 100%;
         height: auto;
+        max-height: 295px;
+        object-fit: contain;
       }
     }
   }

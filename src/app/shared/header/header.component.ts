@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DishesService} from '../services/dishes.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  basket;
 
-  constructor() { }
+  constructor(private dishService: DishesService ) { }
 
   ngOnInit() {
+    this.dishService.restaurantBasket$.asObservable().subscribe(
+      basket => {
+        this.basket = basket;
+        console.log(this.basket);
+      }
+    );
   }
 
 }
