@@ -1,11 +1,12 @@
-
 <div class="wrapper">
+
   <div class="menu">
-    <div class="menu-title" (click)="dishesMenuToggle()">Меню</div>
-    <div class="accordion" *ngIf="isMenuOpened" [ngClass]="{'opened': isMenuOpened}" >
+    <div class="menu-title" (click)="toggleMenu('accordion')">Меню</div>
+
+    <div class="accordion" [@slideInOut]="animationState">
       <ul>
         <li *ngFor="let menuItem of dishesMenuName">
-          <a>{{menuItem}}</a>
+          <a>{{ menuItem }}</a>
         </li>
       </ul>
     </div>
