@@ -1,26 +1,33 @@
-
 <div class="wrapper">
+
   <div class="menu">
-    <div class="menu-title" (click)="dishesMenuToggle()">Меню</div>
-    <div class="accordion" *ngIf="isMenuOpened" [ngClass]="{'opened': isMenuOpened}" >
+    <div class="menu-title" (click)="toggleMenu('accordion')">Меню</div>
+
+    <div class="accordion" [@slideInOut]="animationState">
       <ul>
+        <li>
+          <a (click)="getAllDishes()">Все меню</a>
+        </li>
         <li *ngFor="let menuItem of dishesMenuName">
-          <a>{{menuItem}}</a>
+          <a (click)="chooseDishType(menuItem.type)">{{ menuItem.name }}</a>
         </li>
       </ul>
     </div>
   </div>
 
   <div class="restaurant-list-wrapper">
-    <ng-container *ngFor="let dish of dishes; let index = index">
+    <ng-container *ngFor="let dish of (dishes$ | async); let index = index">
       <div class="dish-preview-wrapper">
-        <h2 class="title">{{dish.name}}</h2>
+        <h2 class="title">{{ dish.name }}</h2>
         <a [routerLink]="['/restaurant', dish.id ]">
           <img [src]="dish.imageUrl" alt="">
         </a>
-        <p class="price">{{dish.price}} грн.</p>
-        <div class="counter"></div>
-        <button>Додати у кошик</button>
+        <p class="price">{{ dish.price }} грн.</p>
+        <app-counter #counterComponent> </app-counter>
+        <button (click)="addToRestaurantBasket(dish, index)"
+                [disabled]="counterComponent.counter.value === 0 || counterComponent.counter.value === null"
+                [ngClass]="{'disabled': counterComponent.counter.value === 0 || counterComponent.counter.value === null}"
+        >Додати у кошик</button>
       </div>
     </ng-container>
   </div>

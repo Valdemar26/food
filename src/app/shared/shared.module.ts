@@ -7,7 +7,7 @@ import { SharedComponent } from './shared.component';
 import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import {DishComponent} from './components/dish-preview/dish/dish.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -15,17 +15,16 @@ import {DishComponent} from './components/dish-preview/dish/dish.component';
     SharedComponent,
     FooterComponent,
     NotfoundComponent,
-    // DishComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     SharedRoutingModule,
     HeaderModule,
+    FormsModule,
   ],
   exports: [
     SharedComponent,
-    // DishComponent
   ]
 })
 export class SharedModule { }

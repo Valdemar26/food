@@ -1,6 +1,6 @@
 footer {
   width: 100%;
-  position: absolute;
+  //position: absolute;
   bottom: 0;
   background: #000;
   padding: 30px 0;
@@ -8,4 +8,12 @@ footer {
   grid-template-rows: 1fr;
   grid-template-columns: 3fr 1fr;
   color: #fff;
+
+  .left-wrapper {
+    padding: 0 0 0 20px;
+  }
+
+  .right-wrapper {
+
+  }
 }

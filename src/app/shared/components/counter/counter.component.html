@@ -1,0 +1,6 @@
+<div class="counter">
+  <input  type="number" class="number" [value]="counter.getValue()" (focus)="resetInput()" (keyup)="changeInput($event)" placeholder="0">
+  <button type="text" class="minus" (click)="incrementCounter()">+</button>
+  <button type="text" class="plus" (click)="decrementCounter()" [disabled]="counter.value == 0">-</button>
+</div>
+

@@ -22,10 +22,8 @@ export class DishComponent implements OnInit, OnDestroy {
   ngOnInit() {
     const dish$ = this.route.paramMap.pipe(
       first(),
-      switchMap(params => this.dishService.getDishType( 'breakfast', +params.get('id')))
-    ).subscribe(
-      dish => this.dish = dish
-    );
+      switchMap(params => this.dishService.getDishById( 'breakfast', +params.get('id')))
+    ).subscribe(dish => this.dish = dish);
 
     this.subscription.add(dish$);
   }
