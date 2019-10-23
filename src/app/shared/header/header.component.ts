@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DishesService} from '../services/dishes.service';
+import { DishesService } from '../services/dishes.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +9,7 @@ import {DishesService} from '../services/dishes.service';
 export class HeaderComponent implements OnInit {
   basket;
 
-  constructor(private dishService: DishesService ) { }
+  constructor(private dishService: DishesService) { }
 
   ngOnInit() {
     this.dishService.restaurantBasket$.asObservable().subscribe(
