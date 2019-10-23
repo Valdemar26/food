@@ -1,1 +1,48 @@
-<p>restaurant-basket works!</p>
+<div class="wrapper">
+  <div class="basket-wrapper">
+    <div class="dish" *ngFor="let dish of dishes">
+      <img [src]="dish[1].dish?.imageUrl" alt="dish-item">
+
+      <p class="name">{{ dish[1].dish?.name }}</p>
+      <p class="description">{{ dish[1].dish?.description }}</p>
+      <p class="dish-price">{{ dish[1].dish?.price }} грн</p>
+      <div class="counter"></div>
+      <div class="price"></div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+
+  <form class="contacts">
+    <label for="name">Ім'я</label>
+    <input id="name" class="name">
+
+    <label for="mobile">Телефон</label>
+    <input id="mobile" class="mobile">
+
+    <h5>Доставка лише у місті Львів</h5>
+
+    <label for="street">Вулиця</label>
+    <input id="street" class="street">
+
+    <label for="build">Будинок</label>
+    <input id="build" class="build">
+
+    <div class="terms">
+      <input type="checkbox">
+    </div>
+    <p>Оформляючи замовлення, я погоджуюся стати учасником програми лояльності "Power Food" і отримувати бонуси за
+      покупки і інші переваги участі.</p>
+  </form>
+
+  <div class="hr"></div>
+
+  <div class="buy">
+    <p>Всього до сплати: грн</p>
+    <button class="submit">Підтвердити купівлю</button>
+  </div>
+
+</div>
+
+

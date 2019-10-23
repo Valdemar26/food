@@ -1,0 +1,63 @@
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+
+  .basket-wrapper {
+    display: flex;
+    margin: 10px 0;
+    flex-direction: column;
+
+    .dish {
+      display: flex;
+      margin: 10px 0;
+
+      img {
+        width: 200px;
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .name {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .hr {
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+  }
+
+  form.contacts {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px auto;
+
+    label {
+      padding-bottom: 5px;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    h5 {
+      font-style: italic;
+      color: firebrick;
+      margin: 10px 0;
+    }
+  }
+
+  .buy {
+    p {
+      margin: 20px 0;
+    }
+
+    button {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
