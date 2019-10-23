@@ -3,7 +3,7 @@
     <ul>
       <li>
         <a [routerLink]="['/basket-restaurant']" routerLinkActive="active">
-          КОРЗИНА РЕСТОРАНУ <span *ngIf="basket">({{ basket ? basket.size : 0 }})</span>
+          КОРЗИНА РЕСТОРАНУ <span *ngIf="basket && basket.size">({{ basket ? basket.size : 0 }})</span>
         </a>
       </li>
       <li>

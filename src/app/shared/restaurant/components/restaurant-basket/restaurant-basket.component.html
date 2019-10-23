@@ -1,14 +1,23 @@
 <div class="wrapper">
   <div class="basket-wrapper">
-    <div class="dish" *ngFor="let dish of dishes">
-      <img [src]="dish[1].dish?.imageUrl" alt="dish-item">
+    <ng-container *ngIf="dishes && dishes.length; else emptyBasket">
+      <div class="dish" *ngFor="let dish of dishes">
+        <img [src]="dish[1].dish?.imageUrl" alt="dish-item">
 
-      <p class="name">{{ dish[1].dish?.name }}</p>
-      <p class="description">{{ dish[1].dish?.description }}</p>
-      <p class="dish-price">{{ dish[1].dish?.price }} грн</p>
-      <div class="counter"></div>
-      <div class="price"></div>
-    </div>
+        <p class="name">{{ dish[1].dish?.name }}</p>
+        <p class="description">{{ dish[1].dish?.description }}</p>
+        <p class="dish-price">{{ dish[1].dish?.price }} грн</p>
+        <div class="counter">
+          {{ dish[1].count }} (порції) x {{ dish[1].dish?.price }} (грн.) = {{ (dish[1].count) * (dish[1].dish?.price) }} грн.
+        </div>
+        <div class="price"></div>
+        <img (click)="deleteDish(dish[1].dish?.id)" class="delete" src="./assets/img/delete.svg" alt="delete">
+      </div>
+    </ng-container>
+    <ng-template #emptyBasket>
+      <p class="emptyBasket">BASKET IS EMPTY!</p>
+    </ng-template>
+
   </div>
 
   <div class="hr"></div>
@@ -38,8 +47,8 @@
 
   <div class="hr"></div>
 
-  <div class="buy">
-    <p>Всього до сплати: грн</p>
+  <div class="buy" *ngIf="dishes && dishes.length">
+    <p>Всього до сплати: {{ getTotalPrice() }}грн</p>
     <button class="submit">Підтвердити купівлю</button>
   </div>
 
