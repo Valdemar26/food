@@ -19,7 +19,7 @@
     <ng-container *ngFor="let dish of (dishes$ | async); let index = index">
       <div class="dish-preview-wrapper">
         <h2 class="title">{{ dish.name }}</h2>
-        <a [routerLink]="['/restaurant', dish.id ]">
+        <a [routerLink]="['/restaurant', dish.id, {type : dish.type}]">
           <img [src]="dish.imageUrl" alt="">
         </a>
         <p class="price">{{ dish.price }} грн.</p>
