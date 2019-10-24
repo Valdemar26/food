@@ -1,15 +1,20 @@
+@import "../../../assets/mixins/mixin-buttons";
+@include btn();
+
 .wrapper {
 
   .menu {
     height: 60px;
     padding-top: 20px;
     padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
 
     .menu-title {
       cursor: pointer;
-      display: flex;
-      justify-content: center;
       margin-bottom: 20px;
+      background-color: #03B200;
+      color: #fff;
     }
 
     .accordion {
@@ -58,6 +63,9 @@
     }
 
     button {
+      background: #3EB211;
+      color: #fff;
+
       &.disabled {
         opacity: .5;
         cursor: not-allowed;

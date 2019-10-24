@@ -15,14 +15,14 @@ export class DishComponent implements OnInit, OnDestroy {
   subscription: Subscription = new Subscription();
 
   constructor(
-    private dishService: DishesService,
+    private dishesService: DishesService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     const dish$ = this.route.paramMap.pipe(
       first(),
-      switchMap(params => this.dishService.getDishById( 'breakfast', +params.get('id')))
+      switchMap(params => this.dishesService.getDishById( 'breakfast', +params.get('id')))
     ).subscribe(dish => this.dish = dish);
 
     this.subscription.add(dish$);
@@ -30,6 +30,11 @@ export class DishComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  addToRestaurantBasket(dish, count = 2) {
+    console.log(dish);
+    this.dishesService.addToRestaurantBasket(dish, count);
   }
 
 }
