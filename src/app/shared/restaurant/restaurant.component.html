@@ -1,7 +1,7 @@
 <div class="wrapper">
 
   <div class="menu">
-    <div class="menu-title" (click)="toggleMenu('accordion')">Меню</div>
+    <button class="menu-title button" (click)="toggleMenu('accordion')">Меню</button>
 
     <div class="accordion" [@slideInOut]="animationState">
       <ul>
@@ -24,7 +24,7 @@
         </a>
         <p class="price">{{ dish.price }} грн.</p>
         <app-counter #counterComponent> </app-counter>
-        <button (click)="addToRestaurantBasket(dish, index)"
+        <button class="button" (click)="addToRestaurantBasket(dish, index)"
                 [disabled]="counterComponent.counter.value === 0 || counterComponent.counter.value === null"
                 [ngClass]="{'disabled': counterComponent.counter.value === 0 || counterComponent.counter.value === null}"
         >Додати у кошик</button>

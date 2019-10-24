@@ -41,7 +41,6 @@ export class RestaurantComponent implements OnInit {
   }
 
   addToRestaurantBasket(dish, index) {
-
     this.listOfCounterComponents.toArray().forEach((counterComponent, componentIndex) => {
       if (index === componentIndex) {
         const count = counterComponent.counter.getValue();

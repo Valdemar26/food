@@ -8,7 +8,7 @@
     <h2>{{dish?.name}}</h2>
     <p class="price">{{dish?.price}}</p>
     <p class="about">{{dish?.description}}</p>
-    <button class="submit">
+    <button class="submit" (click)="addToRestaurantBasket(dish)">
       Додати у кошик!
     </button>
   </div>
