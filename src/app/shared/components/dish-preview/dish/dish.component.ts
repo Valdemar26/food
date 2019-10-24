@@ -4,6 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {first, switchMap} from 'rxjs/operators';
 import {DishInterface} from '../../../interfaces/dish.interface';
 import {Subscription} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dish',
@@ -20,12 +21,21 @@ export class DishComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    this.getDishById();
     const dish$ = this.route.paramMap.pipe(
       first(),
-      switchMap(params => this.dishesService.getDishById( 'breakfast', +params.get('id')))
+      switchMap((params) => {
+        console.log(params)
+        return this.dishesService.getDishById( params.get('type'), +params.get('id'));
+      })
     ).subscribe(dish => this.dish = dish);
 
     this.subscription.add(dish$);
+  }
+
+  getDishById() {
+    console.log('router: ', this.route.snapshot.params.id);
+    this.dishesService.getAllDishes().subscribe((data) => console.log(data));
   }
 
   ngOnDestroy(): void {
