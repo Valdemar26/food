@@ -1,17 +1,18 @@
 @mixin btn() {
   .button {
-    min-width: 160px;
-    min-height: 30px;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.16);
-    text-align: center;
-    padding: 2px 30px;
-    font-size: 12px;
     letter-spacing: 1.8px;
     font-weight: 500;
     text-transform: uppercase;
     transition: $transition;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 2px;
+    margin: 0 auto;
+    padding: 12px 30px;
+    font-size: 20px;
+    background-color: white;
   }
 }
 

@@ -50,11 +50,11 @@ export class DishesService {
   }
 
   setTypeToDish(dish) {
-    Object.entries(dish).forEach((item) => {
-      if (item) {
-        return item[1].forEach((innerItem) => innerItem.type = item[0]);
-      }
-    });
+    // Object.entries(dish).forEach((item) => {
+    //   if (item) {
+    //     // return item[1].forEach((innerItem) => innerItem.type = item[0]);
+    //   }
+    // });
   }
 
   getMenuItems() {
