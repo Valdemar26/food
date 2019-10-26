@@ -4,35 +4,48 @@
 .wrapper {
 
   .menu {
-    height: 60px;
     padding-top: 20px;
     padding-bottom: 20px;
     display: flex;
     justify-content: center;
-
     .menu-title {
       cursor: pointer;
-      margin-bottom: 20px;
-      background-color: #03B200;
-      color: #fff;
+      display: flex;
+      justify-content: center;
+      border: 2px solid #000;
+      border-radius: 2px;
+      width: 100px;
+      margin: 0 auto;
+      padding: 12px;
+      font-size: 20px;
     }
-
     .accordion {
       display: flex;
       justify-content: center;
       transition: all .8s ease;
       cursor: pointer;
-
+      font-size: 20px;
       ul {
         display: flex;
         flex-direction: row;
-
+        padding: 12px;
         li {
           margin: auto 5px;
           cursor: pointer;
-
+          padding: 5px 10px;
+          border: 2px solid transparent;
           &:hover {
-            color: #bab075;
+            //color: #bab075;
+            color: white;
+            border: 2px solid #000;
+            border-radius: 2px;
+            background-color: #000;
+          }
+          &.active {
+            color: white;
+            border: 2px solid #000;
+            border-radius: 2px;
+            background-color: #000;
           }
         }
       }
@@ -85,4 +98,22 @@
   }
 }
 
+.scroll-top-button {
+  position: fixed;
+  display: block;
+  width: 54px;
+  height: 54px;
+  right: 60px;
+  bottom: 50px;
+  background: white url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTUuOTk3IDEzLjM3NGwtNy4wODEgNy4wODFMNyAxOC41NGw4Ljk5Ny04Ljk5OCA5LjAwMyA5LTEuOTE2IDEuOTE2eiIvPjwvc3ZnPg==') no-repeat center/70%;
+  border-radius: 2px;
+  border: 2px solid white;
+  box-shadow: rgba(0,0,0,0.5) 2px 2px 6px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 250ms ease-in-out;
+  &:hover {
+    opacity: 1;
+  }
+}
 

@@ -5,10 +5,10 @@
 
     <div class="accordion" [@slideInOut]="animationState">
       <ul>
-        <li>
+        <li [ngClass]="{'active' : allMenu}">
           <a (click)="getAllDishes()">Все меню</a>
         </li>
-        <li *ngFor="let menuItem of dishesMenuName">
+        <li *ngFor="let menuItem of dishesMenuName" [ngClass]="{'active' : activeItemMenu == menuItem.type}">
           <a (click)="chooseDishType(menuItem.type)">{{ menuItem.name }}</a>
         </li>
       </ul>
@@ -31,6 +31,8 @@
       </div>
     </ng-container>
   </div>
+
+  <div *ngIf="isShow" (click)="gotoTop()" class="scroll-top-button"></div>
 
 </div>
 
