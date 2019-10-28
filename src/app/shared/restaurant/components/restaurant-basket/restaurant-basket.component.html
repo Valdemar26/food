@@ -24,25 +24,34 @@
 
 
   <form class="contacts">
-    <label for="name">Ім'я</label>
-    <input id="name" class="name">
 
-    <label for="mobile">Телефон</label>
-    <input id="mobile" class="mobile">
+
+    <ng-template #personalData>
+<!--      <label for="name">Ім'я</label>-->
+<!--      <input id="name" class="name">-->
+
+<!--      <label for="mobile">Телефон</label>-->
+<!--      <input id="mobile" class="mobile">-->
+
+<!--      <label for="street">Вулиця</label>-->
+<!--      <input id="street" class="street">-->
+
+<!--      <label for="build">Будинок</label>-->
+<!--      <input id="build" class="build">-->
+
+
+    </ng-template>
 
     <h5>Доставка лише у місті Львів</h5>
 
-    <label for="street">Вулиця</label>
-    <input id="street" class="street">
-
-    <label for="build">Будинок</label>
-    <input id="build" class="build">
 
     <div class="terms">
       <input type="checkbox">
       <p>Оформляючи замовлення, я погоджуюся стати учасником програми лояльності "Power Food" і отримувати бонуси за
         покупки і інші переваги участі.</p>
     </div>
+
+    <button (click)="createComponent('success')">Go to step 2</button>
 
   </form>
 
