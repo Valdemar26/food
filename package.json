@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "concurrently \"ng serve --port=4300\" \"json-server --watch --port=3100 server/db.json\" \"node server/server.js\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "server": "json-server --watch server/db.json"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -20,12 +19,16 @@
     "@angular/platform-browser": "~8.2.5",
     "@angular/platform-browser-dynamic": "~8.2.5",
     "@angular/router": "~8.2.5",
+    "concurrently": "^5.0.0",
     "json-server": "^0.15.1",
     "node": "^12.12.0",
     "nvm": "0.0.4",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "nodemailer": "^4.6.8"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.4",

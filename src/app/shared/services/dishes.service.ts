@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import {filter, map, switchMap, tap} from 'rxjs/operators';
 
@@ -11,14 +11,18 @@ export class DishesService {
 
   restaurantBasket$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://localhost:3100';
 
   constructor(private http: HttpClient) { }
 
   getAllDishes(): Observable<any> {
     return this.http.get(`${this.baseUrl}/restaurant`).pipe(
       map((dish) => {
-        this.setTypeToDish(dish);
+        Object.entries(dish).forEach((item) => {
+          if (item) {
+            return item[1].forEach((innerItem) => innerItem.type = item[0]);
+          }
+        });
         return [...Object.values(dish)].reduce((acc, item) => {
           return [...acc, ...item ];
         } );
@@ -38,7 +42,11 @@ export class DishesService {
   getDishByType(type: string) {
     return this.http.get(`${this.baseUrl}/restaurant`).pipe(
       map((dish) => {
-        this.setTypeToDish(dish);
+        Object.entries(dish).forEach((item) => {
+          if (item) {
+            return item[1].forEach((innerItem) => innerItem.type = item[0]);
+          }
+        });
         return type === 'all' ? dish : dish[type];
       } )
     );
@@ -49,12 +57,16 @@ export class DishesService {
     this.restaurantBasket$.next(this.basket);
   }
 
-  setTypeToDish(dish) {
-    // Object.entries(dish).forEach((item) => {
-    //   if (item) {
-    //     // return item[1].forEach((innerItem) => innerItem.type = item[0]);
-    //   }
-    // });
+  sendRestaurantOrderToEmail(person, order) {
+    // const body = JSON.stringify({person, order});
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'Access-Control-Allow-Origin',
+      })
+    };
+    this.http.post('http://localhost:8081/basket-restaurant', {person, order}, httpOptions).subscribe(
+      res => console.log(res)
+    );
   }
 
   getMenuItems() {
