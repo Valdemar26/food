@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RestaurantComponent } from './restaurant.component';
 import { FormsModule } from '@angular/forms';
 import { CounterModule } from '../components/counter/counter.module';
+import { LazyLoadDirective } from './lazy-image.directive';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    RestaurantComponent
+    RestaurantComponent,
+    LazyLoadDirective
   ],
   imports: [
     RouterModule.forChild(routes),

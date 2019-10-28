@@ -63,7 +63,7 @@ export class RestaurantBasketComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.componentRef.destroy();
+    // this.componentRef.destroy();
   }
 
 }
