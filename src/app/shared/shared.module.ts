@@ -8,6 +8,8 @@ import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import {FormsModule} from '@angular/forms';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {MainInterceptor} from './services/main.interceptor';
 
 
 @NgModule({
@@ -25,6 +27,13 @@ import {FormsModule} from '@angular/forms';
   ],
   exports: [
     SharedComponent,
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MainInterceptor,
+      multi: true
+    }
   ]
 })
 export class SharedModule { }

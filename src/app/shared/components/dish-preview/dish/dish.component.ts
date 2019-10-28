@@ -1,10 +1,11 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {DishesService} from '../../../services/dishes.service';
-import {ActivatedRoute} from '@angular/router';
-import {first, switchMap} from 'rxjs/operators';
-import {DishInterface} from '../../../interfaces/dish.interface';
-import {Subscription} from 'rxjs';
-import {Router} from '@angular/router';
+import { Component, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { DishesService } from '../../../services/dishes.service';
+import { ActivatedRoute } from '@angular/router';
+import { first, switchMap } from 'rxjs/operators';
+import { DishInterface } from '../../../interfaces/dish.interface';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { CounterComponent } from '../../counter/counter.component';
 
 @Component({
   selector: 'app-dish',
@@ -14,6 +15,7 @@ import {Router} from '@angular/router';
 export class DishComponent implements OnInit, OnDestroy {
   dish: DishInterface;
   subscription: Subscription = new Subscription();
+  @ViewChildren('counterComponent') listOfCounterComponents: QueryList<CounterComponent>;
 
   constructor(
     private dishesService: DishesService,

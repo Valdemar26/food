@@ -23,10 +23,38 @@
   <div class="hr"></div>
 
 
-  <form class="contacts">
+  <form class="contacts" [formGroup]="orderRestaurantForm" (ngSubmit)="onSubmit()" >
+    <label for="name"  >
+      Ім'я
+      <input id="name" class="name" formControlName="name">
+    </label>
+
+    <label for="phone">
+      Телефон
+      <input id="phone" class="phone" formControlName="phone">
+    </label>
+
+    <label for="email">
+      email
+      <input id="email" class="email" formControlName="email" >
+    </label>
+
+    <label for="street">
+      Вулиця
+      <input id="street" class="street" formControlName="street">
+    </label>
+
+    <label for="build">
+      Будинок
+      <input id="build" class="build" formControlName="build">
+    </label>
+
+    <button type="submit" [disabled]="!orderRestaurantForm.valid">Submit</button>
+
+  </form>
 
 
-    <ng-template #personalData>
+<!--    <ng-template #personalData>-->
 <!--      <label for="name">Ім'я</label>-->
 <!--      <input id="name" class="name">-->
 
@@ -40,20 +68,20 @@
 <!--      <input id="build" class="build">-->
 
 
-    </ng-template>
+<!--    </ng-template>-->
 
-    <h5>Доставка лише у місті Львів</h5>
+<!--    <h5>Доставка лише у місті Львів</h5>-->
 
 
-    <div class="terms">
-      <input type="checkbox">
-      <p>Оформляючи замовлення, я погоджуюся стати учасником програми лояльності "Power Food" і отримувати бонуси за
-        покупки і інші переваги участі.</p>
-    </div>
+<!--    <div class="terms">-->
+<!--      <input type="checkbox">-->
+<!--      <p>Оформляючи замовлення, я погоджуюся стати учасником програми лояльності "Power Food" і отримувати бонуси за-->
+<!--        покупки і інші переваги участі.</p>-->
+<!--    </div>-->
 
-    <button (click)="createComponent('success')">Go to step 2</button>
+<!--    <button (click)="createComponent('success')">Go to step 2</button>-->
 
-  </form>
+
 
   <div class="hr"></div>
 

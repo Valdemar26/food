@@ -1,3 +1,6 @@
+@import "../../../../../assets/mixins/mixin-buttons";
+@include btn();
+
 .bread-crumb {
   margin: 20px auto auto 10px;
 }
@@ -32,6 +35,10 @@
     .submit {
       position: absolute;
       bottom: 0;
+    }
+
+    button {
+      font-size: 10px;
     }
   }
 }

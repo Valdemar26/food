@@ -8,7 +8,12 @@
     <h2>{{dish?.name}}</h2>
     <p class="price">{{dish?.price}}</p>
     <p class="about">{{dish?.description}}</p>
-    <button class="submit" (click)="addToRestaurantBasket(dish)">
+
+    <app-counter #counterComponent> </app-counter>
+
+    <button class="submit button" (click)="addToRestaurantBasket(dish, counterComponent.counter.value)"
+            [disabled]="counterComponent.counter.value === 0 || counterComponent.counter.value === null"
+            [ngClass]="{'disabled': counterComponent.counter.value === 0 || counterComponent.counter.value === null}">
       Додати у кошик!
     </button>
   </div>
