@@ -1,9 +1,9 @@
-import {Component, HostListener, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import { Component, HostListener, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { DishesService } from '../services/dishes.service';
 import { DishInterface } from '../interfaces/dish.interface';
 import { SlideInOutAnimation } from './animations';
 import { Observable } from 'rxjs';
-import {CounterComponent} from '../components/counter/counter.component';
+import { CounterComponent } from '../components/counter/counter.component';
 
 @Component({
   selector: 'app-restaurant',
