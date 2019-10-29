@@ -17,7 +17,7 @@ app.use(function(req, res, next) {
 });
 
 app.post('/basket-restaurant', function (req, res) {
-console.log(req);
+console.log('POST: ', req);
   const output = `
     <p>You have a new contact request</p>
     <h3>Contact Details</h3>
@@ -35,8 +35,8 @@ console.log(req);
     port: 465,
     secure: true,
     auth: {
-      user: `tolickpypka@gmail.com`,
-      pass: 'qazwsxedc123@'
+      user: mail,
+      pass: password
     }
   });
   let mailOptions = {

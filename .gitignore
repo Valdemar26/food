@@ -50,3 +50,7 @@ package-lock.json
 
 # environments
 src/environments/
+/server/.env
+
+# server.js
+server/server.js
