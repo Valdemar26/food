@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'rations', loadChildren: () => import(`./rations/rations.module`).then(m => m.RationsModule) },
   { path: 'contacts', loadChildren: () => import(`./contacts/contacts.module`).then(m => m.ContactsModule) },
   { path: 'delivery', loadChildren: () => import(`./delivery/delivery.module`).then(m => m.DeliveryModule) },
+  { path: 'auth', loadChildren: () => import(`./auth/auth.module`).then(m => m.AuthModule) },
   {
     path: 'basket-rations',
     loadChildren: () => import(`./rations/components/ration-basket/ration-basket.module`)
