@@ -70,6 +70,8 @@ export class RestaurantBasketComponent implements OnInit, OnDestroy {
       const order = this.dishService.restaurantBasket$.getValue();
       console.log([...order][0]);
       this.dishService.sendRestaurantOrderToEmail( person, [...order][0] );
+
+      this.orderRestaurantForm.reset();
     }
   }
 
