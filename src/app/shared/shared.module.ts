@@ -10,6 +10,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import {FormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {MainInterceptor} from './services/main.interceptor';
+import {AlertComponent} from './auth/components/alert/alert.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {MainInterceptor} from './services/main.interceptor';
     SharedComponent,
     FooterComponent,
     NotfoundComponent,
+    AlertComponent
   ],
   imports: [
     CommonModule,

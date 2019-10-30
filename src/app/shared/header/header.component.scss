@@ -34,6 +34,30 @@ header {
           width: 150px;
           height: auto;
         }
+
+        &.user {
+          position: relative;
+          img {
+            width: 40px;
+            height: auto;
+          }
+          .menu {
+            position: absolute;
+            top: 50px;
+
+            ul {
+              li {
+                p {
+                  color: #ffffff;
+                }
+                a {
+                  color: orangered;
+                }
+              }
+            }
+          }
+
+        }
       }
     }
   }

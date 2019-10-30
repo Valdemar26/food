@@ -1,0 +1,44 @@
+.alert {
+  position: relative;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+
+  &.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+
+  &.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+
+}
+
+
+.alert{
+  background-color: #FF0000;
+  animation:alert 0.5s 1;
+  -webkit-animation:alert 0.5s 1;
+  animation-fill-mode: forwards;
+
+  animation-delay:5s;
+  -webkit-animation-delay:1s; /* Safari and Chrome */
+  -webkit-animation-fill-mode: forwards;
+
+}
+
+@-webkit-keyframes alert{
+  0%   {opacity: 1;}
+  20%  {opacity: 0.8;}
+  40%  {opacity: 0.7;}
+  60%  {opacity: 0.6;}
+  70%  {opacity: 0.5;}
+  80%  {opacity: 0.4;}
+  90% {opacity: 0.2;-webkit-transform: translateY(0px);}
+  100% {opacity: 0;-webkit-transform: translateY(-30px);}
+}
