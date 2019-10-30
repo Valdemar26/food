@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {MainComponent} from './main/main.component';
 import {NotfoundComponent} from './notfound/notfound.component';
+import {AuthGuard} from './auth/helpers/auth.guard';
 
 
 const routes: Routes = [
@@ -28,7 +29,7 @@ const routes: Routes = [
   {
     path: 'basket-restaurant',
     loadChildren: () => import(`./restaurant/components/restaurant-basket/restaurant-basket.module`)
-      .then(m => m.RestaurantBasketModule)
+      .then(m => m.RestaurantBasketModule), canActivate: [AuthGuard]
   },
   { path: '**', component: NotfoundComponent }
 ];

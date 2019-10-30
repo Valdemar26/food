@@ -38,8 +38,17 @@
       <li>
         <a *ngIf="!currentUser" [routerLink]="'/auth'" routerLinkActive="active">ВХІД</a>
       </li>
-      <li>
-        <a *ngIf="currentUser" (click)="logout()">ВИХІД</a>
+      <li class="user" *ngIf="currentUser">
+        <img  src="./assets/img/user.svg" alt="user" (click)="userMenu =!userMenu">
+
+        <div class="menu">
+          <ul>
+            <li *ngIf="userMenu" >
+              <a (click)="logout()">ВИХІД</a>
+              <p>{{ this.currentUser.username }}</p>
+            </li>
+          </ul>
+        </div>
       </li>
     </ul>
   </nav>

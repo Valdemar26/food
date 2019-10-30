@@ -7,12 +7,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AlertComponent } from './components/alert.component';
-
-import {JwtInterceptor} from './helpers/jwt.interceptor';
-import {ErrorInterceptor} from './helpers/error.interceptor';
-import {FakeBackendInterceptor} from './helpers/fake-backend.interceptor';
-import {CacheInterceptor} from './helpers/test.interceptor';
+import {AlertComponent} from './components/alert/alert.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,7 +21,6 @@ const routes: Routes = [
     AuthComponent,
     LoginComponent,
     RegisterComponent,
-    AlertComponent
   ],
   imports: [
     CommonModule,
