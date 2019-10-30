@@ -6,7 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {CacheInterceptor} from './shared/auth/helpers/test.interceptor';
+import {JwtInterceptor} from './shared/auth/helpers/jwt.interceptor';
+import {ErrorInterceptor} from './shared/auth/helpers/error.interceptor';
+import {FakeBackendInterceptor} from './shared/auth/helpers/fake-backend.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     CoreModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

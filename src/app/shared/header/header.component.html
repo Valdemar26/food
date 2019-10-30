@@ -36,7 +36,10 @@
         <a [routerLink]="'/delivery'" routerLinkActive="active">ДОСТАВКА І ОПЛАТА</a>
       </li>
       <li>
-        <a [routerLink]="'/auth'" routerLinkActive="active">ВХІД</a>
+        <a *ngIf="!currentUser" [routerLink]="'/auth'" routerLinkActive="active">ВХІД</a>
+      </li>
+      <li>
+        <a *ngIf="currentUser" (click)="logout()">ВИХІД</a>
       </li>
     </ul>
   </nav>
