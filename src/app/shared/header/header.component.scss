@@ -37,21 +37,38 @@ header {
 
         &.user {
           position: relative;
+
           img {
             width: 40px;
             height: auto;
           }
+
           .menu {
             position: absolute;
-            top: 50px;
+            top: 75px;
+            right: 0;
 
             ul {
+
               li {
+                border: 1px solid #000;
+                border-radius: 0 0 3px 3px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                background-color: #000;
+                width: 100px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
                 p {
                   color: #ffffff;
+
                 }
+
                 a {
                   color: orangered;
+                  margin-bottom: 10px;
                 }
               }
             }
