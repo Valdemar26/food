@@ -7,10 +7,11 @@ import { SharedComponent } from './shared.component';
 import { HeaderModule } from './header/header.module';
 import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import {FormsModule} from '@angular/forms';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
-import {MainInterceptor} from './services/main.interceptor';
-import {AlertComponent} from './auth/components/alert/alert.component';
+import { FormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MainInterceptor } from './services/main.interceptor';
+import { AlertComponent } from './auth/components/alert/alert.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {AlertComponent} from './auth/components/alert/alert.component';
     SharedComponent,
     FooterComponent,
     NotfoundComponent,
-    AlertComponent
+    AlertComponent,
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,7 @@ import {AlertComponent} from './auth/components/alert/alert.component';
   ],
   exports: [
     SharedComponent,
+    BreadcrumbComponent
   ],
   providers: [
     {
