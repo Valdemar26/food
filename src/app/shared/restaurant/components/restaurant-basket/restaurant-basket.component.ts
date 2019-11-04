@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import { DishesService } from '../../../services/dishes.service';
 import { DishInterface } from '../../../interfaces/dish.interface';
-import { PersonalDataComponent } from './personal-data/personal-data.component';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({

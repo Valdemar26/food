@@ -39,6 +39,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.authenticationService.logout();
     this.router.navigate(['/auth/login']);
+    this.dishService.restaurantBasket$.next(null);
     this.userMenu = false;
   }
 

@@ -1,3 +1,5 @@
+@import "../../../../assets/variables";
+
 div.counter {
   margin-bottom: 10px;
 
@@ -5,5 +7,36 @@ div.counter {
   input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+  }
+
+  .number {
+    max-width: 100px;
+    height: 30px;
+    border: none;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .plus, .minus {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: $white;
+    cursor: pointer;
+  }
+
+  .plus {
+    border: 1px solid lighten($success, 10%);
+    background-color: lighten($success, 10%);
+  }
+
+  .minus {
+    background-color: lighten($fire, 10%);
+    border: 1px solid lighten($fire, 10%);
+
+    &.disabled {
+      opacity: .4;
+      cursor: not-allowed;
+    }
   }
 }

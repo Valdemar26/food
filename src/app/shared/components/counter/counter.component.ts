@@ -16,12 +16,12 @@ export class CounterComponent implements OnInit {
   }
 
   incrementCounter() {
-    this.counter.next(this.counter.getValue() + 1);
+    this.counter.next(+this.counter.getValue() + 1);
   }
 
   decrementCounter() {
     if ( this.counter.getValue() > 0 ) {
-      this.counter.next(this.counter.getValue() - 1);
+      this.counter.next(+this.counter.getValue() - 1);
     }
   }
 

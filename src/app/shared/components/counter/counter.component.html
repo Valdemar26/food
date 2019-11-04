@@ -1,7 +1,7 @@
 <div class="counter">
   <label for="counter"></label>
+  <button type="text" class="plus" (click)="incrementCounter()">+</button>
   <input  type="number" id="counter" class="number" [value]="counter.getValue()" (focus)="resetInput()" (keyup)="changeInput($event)" placeholder="0">
-  <button type="text" class="minus" (click)="incrementCounter()">+</button>
-  <button type="text" class="plus" (click)="decrementCounter()" [disabled]="counter.value == 0">-</button>
+  <button type="text" class="minus" (click)="decrementCounter()" [disabled]="counter.value == 0" [class.disabled]="counter.value == 0">-</button>
 </div>
 
