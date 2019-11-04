@@ -1,3 +1,5 @@
+@import "../../../../../assets/variables";
+
 .alert {
   position: relative;
   padding: .75rem 1.25rem;
@@ -6,13 +8,13 @@
   border-radius: .25rem;
 
   &.alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+    color: $dark-red;
+    background-color: $danger-bg;
+    border-color: $danger-border;
   }
 
   &.alert-success {
-    color: #155724;
+    color: $success;
     background-color: #d4edda;
     border-color: #c3e6cb;
   }
@@ -21,7 +23,7 @@
 
 
 .alert{
-  background-color: #FF0000;
+  background-color: $red;
   animation:alert 0.5s 1;
   -webkit-animation:alert 0.5s 1;
   animation-fill-mode: forwards;

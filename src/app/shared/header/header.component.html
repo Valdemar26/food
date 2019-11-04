@@ -45,7 +45,7 @@
           <ul>
             <li *ngIf="userMenu" >
               <a (click)="logout()">ВИХІД</a>
-              <p>{{ this.currentUser.username }}</p>
+              <p>{{ this.currentUser.user.name }}</p>
             </li>
           </ul>
         </div>

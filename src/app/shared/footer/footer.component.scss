@@ -1,3 +1,5 @@
+@import "../../../assets/variables";
+
 footer {
   width: 100%;
   position: absolute;
@@ -7,13 +9,10 @@ footer {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 3fr 1fr;
-  color: #fff;
+  color: $white;
 
   .left-wrapper {
     padding: 0 0 0 20px;
   }
 
-  .right-wrapper {
-
-  }
 }

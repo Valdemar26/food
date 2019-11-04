@@ -1,5 +1,7 @@
+@import "../../../assets/variables";
+
 header {
-  background-color: #000;
+  background-color: $black;
   padding: 15px 0;
 
   nav {
@@ -9,6 +11,7 @@ header {
       list-style-type: none;
       justify-content: space-around;
       align-items: center;
+
       &:first-child {
         margin-bottom: 15px;
       }
@@ -18,11 +21,11 @@ header {
 
         a {
           text-decoration: none;
-          color: #fff;
+          color: $white;
           font-size: 16px;
 
           &.active {
-            color: #ccc;
+            color: $gray;
           }
 
           &:hover {
@@ -51,23 +54,23 @@ header {
             ul {
 
               li {
-                border: 1px solid #000;
+                border: 1px solid $black;
                 border-radius: 0 0 3px 3px;
                 padding-top: 10px;
                 padding-bottom: 10px;
-                background-color: #000;
+                background-color: $black;
                 width: 100px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
                 p {
-                  color: #ffffff;
+                  color: $white;
 
                 }
 
                 a {
-                  color: orangered;
+                  color: $orangered;
                   margin-bottom: 10px;
                 }
               }
