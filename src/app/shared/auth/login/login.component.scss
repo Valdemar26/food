@@ -1,3 +1,5 @@
+@import "../../../../assets/variables";
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -12,9 +14,9 @@
     border-radius: .25rem;
 
     &.alert-info {
-      color: #0c5460;
-      background-color: #d1ecf1;
-      border-color: #bee5eb;
+      color: $dark-green;
+      background-color: $light-gray;
+      border-color: $dark-gray;
     }
   }
 
@@ -26,7 +28,7 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: $white;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;

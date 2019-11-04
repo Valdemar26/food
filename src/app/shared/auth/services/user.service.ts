@@ -28,7 +28,7 @@ export class UserService {
       })
     };
 
-    return this.http.post(`${this.localServer}/users/register`, JSON.stringify(user), httpOptions);
+    return this.http.post(`${this.localServer}/users/register`, user, httpOptions);
   }
 
   update(user: User) {

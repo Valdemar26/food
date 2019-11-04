@@ -1,10 +1,12 @@
+@import "../../../../../assets/variables";
+
 .wrapper {
   width: 90%;
   margin: 0 auto;
 
   .buy {
     p {
-      color: red;
+      color: $red;
       font-size: 20px;
       font-weight: bold;
     }
@@ -44,7 +46,7 @@
 
       .counter {
         position: absolute;
-        color: firebrick;
+        color: $fire;
         bottom: 50px;
         left: 50%;
       }
@@ -52,7 +54,7 @@
   }
 
   .hr {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid $gray;
     width: 100%;
   }
 
@@ -73,7 +75,7 @@
 
     h5 {
       font-style: italic;
-      color: firebrick;
+      color: $fire;
       margin: 10px 0;
     }
 
@@ -83,6 +85,7 @@
   }
 
   .buy {
+
     p {
       margin: 20px 0;
     }

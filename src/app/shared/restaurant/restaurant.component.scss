@@ -1,4 +1,5 @@
 @import "../../../assets/mixins/mixin-buttons";
+@import "../../../assets/variables";
 @include btn();
 
 .wrapper {
@@ -6,21 +7,6 @@
   .menu {
     padding-top: 20px;
     padding-bottom: 20px;
-    //display: flex;
-    //justify-content: center;
-
-    .menu-title {
-      //cursor: pointer;
-      //display: flex;
-      //justify-content: center;
-      //border: 2px solid #000;
-      //border-radius: 2px;
-      //width: 100px;
-      //margin: 0 auto;
-      //padding: 12px;
-      //font-size: 20px;
-      //background-color: white;
-    }
 
     .accordion {
       display: flex;
@@ -41,18 +27,17 @@
           border: 2px solid transparent;
 
           &:hover {
-            //color: #bab075;
-            color: white;
-            border: 2px solid #000;
+            color: $white;
+            border: 2px solid $black;
             border-radius: 2px;
-            background-color: #000;
+            background-color: $black;
           }
 
           &.active {
-            color: white;
-            border: 2px solid #000;
+            color: $white;
+            border: 2px solid $black;
             border-radius: 2px;
-            background-color: #000;
+            background-color: $black;
           }
         }
       }
@@ -75,7 +60,7 @@
     h2 {
       font-size: 18px;
       height: 40px;
-      color: #111;
+      color: $dark-black;
     }
 
     .price {
@@ -106,13 +91,14 @@
   height: 54px;
   right: 60px;
   bottom: 50px;
-  background: white url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTUuOTk3IDEzLjM3NGwtNy4wODEgNy4wODFMNyAxOC41NGw4Ljk5Ny04Ljk5OCA5LjAwMyA5LTEuOTE2IDEuOTE2eiIvPjwvc3ZnPg==') no-repeat center/70%;
+  background: $white url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTUuOTk3IDEzLjM3NGwtNy4wODEgNy4wODFMNyAxOC41NGw4Ljk5Ny04Ljk5OCA5LjAwMyA5LTEuOTE2IDEuOTE2eiIvPjwvc3ZnPg==') no-repeat center/70%;
   border-radius: 2px;
-  border: 2px solid white;
+  border: 2px solid $white;
   box-shadow: rgba(0,0,0,0.5) 2px 2px 6px;
   cursor: pointer;
   opacity: 0.5;
   transition: opacity 250ms ease-in-out;
+
   &:hover {
     opacity: 1;
   }
