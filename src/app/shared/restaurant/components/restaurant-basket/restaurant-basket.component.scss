@@ -1,4 +1,6 @@
+@import "../../../../../assets/mixins/mixin-buttons";
 @import "../../../../../assets/variables";
+@include btn();
 
 .wrapper {
   width: 90%;
@@ -47,7 +49,7 @@
       .counter {
         position: absolute;
         color: $fire;
-        bottom: 50px;
+        bottom: 0;
         left: 50%;
       }
     }
@@ -61,17 +63,27 @@
   form.contacts {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     width: 50%;
     margin: 20px auto;
 
-    label {
-      padding-bottom: 5px;
+    .label-wrapper {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+
+      label {
+        flex: 1;
+        text-align: right;
+        line-height: 1.5;
+      }
+
+      input {
+        margin-left: 10px;
+        flex: 1;
+      }
     }
 
-    input {
-      margin: 10px;
-    }
+
 
     h5 {
       font-style: italic;
@@ -81,6 +93,13 @@
 
     .terms {
       display: flex;
+    }
+
+    .submit {
+      font-size: 14px;
+      justify-content: flex-end;
+      width: 50%;
+      margin: 0 0 0 auto;
     }
   }
 
