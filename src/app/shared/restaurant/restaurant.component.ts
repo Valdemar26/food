@@ -4,6 +4,7 @@ import { DishInterface } from '../interfaces/dish.interface';
 import { SlideInOutAnimation } from './animations';
 import { Observable } from 'rxjs';
 import { CounterComponent } from '../components/counter/counter.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-restaurant',
@@ -23,7 +24,7 @@ export class RestaurantComponent implements OnInit {
   allMenu: boolean;
   activeItemMenu: any;
 
-  constructor(private dishesService: DishesService) { }
+  constructor(private dishesService: DishesService, private router: Router) { }
 
   @HostListener('window:scroll')
   checkScroll() {

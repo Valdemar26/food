@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MainComponent} from './main/main.component';
-import {NotfoundComponent} from './notfound/notfound.component';
-import {AuthGuard} from './auth/helpers/auth.guard';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { AuthGuard } from './auth/helpers/auth.guard';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
-  { path: 'main', loadChildren: () => import(`./main/main.module`).then(m => m.MainModule) },
+  { path: '', redirectTo: 'main', pathMatch: 'full'},
+  { path: 'main', loadChildren: () => import(`./main/main.module`).then(m => m.MainModule), data: {breadcrumb: 'Головна'} },
   { path: 'restaurant',
     loadChildren: () => import(`./restaurant/restaurant.module`)
-      .then(m => m.RestaurantModule)
+      .then(m => m.RestaurantModule), data: {breadcrumb: 'Ресторан'}
   },
   {
     path: 'restaurant/:id',
     loadChildren: () => import(`./components/dish-preview/dish.module`)
-      .then(m => m.DishModule)
+      .then(m => m.DishModule), data: {breadcrumb: `id`}
   },
   { path: 'rations', loadChildren: () => import(`./rations/rations.module`).then(m => m.RationsModule) },
   { path: 'contacts', loadChildren: () => import(`./contacts/contacts.module`).then(m => m.ContactsModule) },
