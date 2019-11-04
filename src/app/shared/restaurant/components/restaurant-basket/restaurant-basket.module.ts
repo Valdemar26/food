@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { RestaurantBasketComponent } from './restaurant-basket.component';
-import { PersonalDataComponent } from './personal-data/personal-data.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
@@ -14,7 +13,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     RestaurantBasketComponent,
-    PersonalDataComponent
   ],
   imports: [
     CommonModule,
