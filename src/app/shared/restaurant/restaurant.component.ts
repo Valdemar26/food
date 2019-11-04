@@ -46,6 +46,7 @@ export class RestaurantComponent implements OnInit {
       behavior: 'smooth'
     });
   }
+
   ngOnInit(): void {
     this.allMenu = true;
     this.getAllDishes();

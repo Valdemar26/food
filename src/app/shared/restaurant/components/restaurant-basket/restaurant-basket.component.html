@@ -27,32 +27,33 @@
         [formGroup]="orderRestaurantForm"
         (ngSubmit)="onSubmit()"
         *ngIf="dishes && dishes.length">
-    <label for="name"  >
-      Ім'я
+
+    <div class="label-wrapper">
+      <label for="name">Ім'я</label>
       <input id="name" class="name" formControlName="name">
-    </label>
+    </div>
 
-    <label for="phone">
-      Телефон
+    <div class="label-wrapper">
+      <label for="phone">Телефон</label>
       <input id="phone" class="phone" formControlName="phone">
-    </label>
+    </div>
 
-    <label for="email">
-      email
-      <input id="email" class="email" formControlName="email" >
-    </label>
+    <div class="label-wrapper">
+      <label for="email">Email</label>
+      <input id="email" class="email" formControlName="email">
+    </div>
 
-    <label for="street">
-      Вулиця
+    <div class="label-wrapper">
+      <label for="street">Вулиця</label>
       <input id="street" class="street" formControlName="street">
-    </label>
+    </div>
 
-    <label for="build">
-      Будинок
+    <div class="label-wrapper">
+      <label for="build">Будинок</label>
       <input id="build" class="build" formControlName="build">
-    </label>
+    </div>
 
-    <button class="submit" type="submit" [disabled]="!orderRestaurantForm.valid">Підтвердити купівлю</button>
+    <button class="submit button" type="submit" [disabled]="!orderRestaurantForm.valid">Підтвердити купівлю</button>
 
   </form>
 
