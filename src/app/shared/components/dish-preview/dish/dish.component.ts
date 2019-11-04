@@ -48,20 +48,5 @@ export class DishComponent implements OnInit, OnDestroy {
     console.log(dish);
     this.dishesService.addToRestaurantBasket(dish, count);
   }
-
 }
 
-
-/** TODO **\
- */
-// getDishType(type: string, id: number) {
-//   return this.http.get(`${this.baseUrl}/restaurant`).pipe(
-//     switchMap((dish) => this.getDishById(dish[type], id)),
-//   );
-// }
-//
-// getDishById(data, id): Observable<any> {
-//   return of(data).pipe(
-//     filter((dish) => dish.id === id
-//     ));
-// }
