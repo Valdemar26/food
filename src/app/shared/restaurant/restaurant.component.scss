@@ -3,6 +3,7 @@
 @include btn();
 
 .wrapper {
+  overflow: hidden;
 
   .menu {
     padding-top: 20px;
@@ -56,11 +57,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.5s ease;
 
     h2 {
       font-size: 18px;
       height: 40px;
       color: $dark-black;
+      text-align: center;
     }
 
     .price {
@@ -80,6 +83,10 @@
         max-height: 295px;
         object-fit: contain;
       }
+    }
+
+    &:hover {
+      transform: scale(1.02);
     }
   }
 }

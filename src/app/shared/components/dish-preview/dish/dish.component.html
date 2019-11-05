@@ -6,11 +6,15 @@
 <div class="dish-item-wrapper">
   <img [src]="dish?.imageUrl" alt="{{ dish?.name }}">
   <div class="description">
-    <h2>{{dish?.name}}</h2>
-    <p class="price">{{dish?.price}}</p>
-    <p class="about">{{dish?.description}}</p>
+    <h2>{{ dish?.name }}</h2>
+
+    <p class="about">{{ dish?.description }}</p>
 
     <app-counter #counterComponent> </app-counter>
+
+    <p class="price">
+      {{ counterComponent.counter.value === 0 ? dish?.price : dish?.price * counterComponent.counter.value }}грн.
+    </p>
 
     <button class="submit button" (click)="addToRestaurantBasket(dish, counterComponent.counter.value)"
             [disabled]="counterComponent.counter.value === 0 || counterComponent.counter.value === null"
