@@ -1,0 +1,18 @@
+ul {
+  display: flex;
+  width: auto;
+  max-width: 300px;
+  justify-content: flex-start;
+
+  li {
+    padding: 10px;
+
+    span {
+      color: firebrick;
+      cursor: pointer;
+      font-weight: bold;
+      font-style: italic;
+
+    }
+  }
+}
