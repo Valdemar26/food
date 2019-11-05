@@ -1,4 +1,6 @@
 @import "../../../../../assets/mixins/mixin-buttons";
+@import "../../../../../assets/variables";
+
 @include btn();
 
 .bread-crumb {
@@ -26,10 +28,17 @@
       align-self: center;
       font-size: 20px;
       font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .about {
+      margin: 10px auto;
     }
 
     .price {
-
+      color: $fire;
+      font-size: 20px;
+      margin-top: 20px;
     }
 
     .submit {
