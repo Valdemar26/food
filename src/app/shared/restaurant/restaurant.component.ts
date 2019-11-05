@@ -4,7 +4,7 @@ import { DishInterface } from '../interfaces/dish.interface';
 import { SlideInOutAnimation } from './animations';
 import { Observable } from 'rxjs';
 import { CounterComponent } from '../components/counter/counter.component';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-restaurant',
@@ -24,18 +24,20 @@ export class RestaurantComponent implements OnInit {
   allMenu: boolean;
   activeItemMenu: any;
 
-  constructor(private dishesService: DishesService, private router: Router) { }
+  constructor(private dishesService: DishesService, private router: Router, private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.allMenu = true;
+    this.getAllDishes();
+    this.dishesMenuName = this.dishesService.getMenuItems();
+  }
 
   @HostListener('window:scroll')
   checkScroll() {
 
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
-    if (scrollPosition >= this.topPosToStartShowing) {
-      this.isShow = true;
-    } else {
-      this.isShow = false;
-    }
+    this.isShow = scrollPosition >= this.topPosToStartShowing;
   }
 
   // TODO: Cross browsing
@@ -47,11 +49,6 @@ export class RestaurantComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.allMenu = true;
-    this.getAllDishes();
-    this.dishesMenuName = this.dishesService.getMenuItems();
-  }
 
   getAllDishes() {
     this.allMenu = true;

@@ -1,2 +1,5 @@
-
-{{location}}
+<ul>
+  <li (click)="navigateToRoute(crumb)" *ngFor="let crumb of breadCrumb">
+    <span>{{ crumb | uppercase}} ></span>
+  </li>
+</ul>

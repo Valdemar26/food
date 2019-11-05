@@ -1,5 +1,5 @@
-@import "../../../../../assets/mixins/mixin-buttons";
-@import "../../../../../assets/variables";
+@import "../../../../assets/mixins/mixin-buttons";
+@import "../../../../assets/variables";
 
 @include btn();
 
@@ -41,6 +41,10 @@
       color: $fire;
       font-size: 20px;
       margin-top: 20px;
+
+      &.emptyOrder {
+        opacity: 0.4;
+      }
     }
 
     .submit {

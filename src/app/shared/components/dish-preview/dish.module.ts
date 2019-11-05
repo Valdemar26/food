@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { DishPreviewComponent } from './dish-preview.component';
-import { DishComponent } from './dish/dish.component';
+import { DishComponent } from './dish.component';
 import { CounterModule } from '../counter/counter.module';
 
 const routes: Routes = [
@@ -10,14 +9,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DishPreviewComponent, DishComponent],
+  declarations: [DishComponent],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
     CounterModule
   ],
   exports: [
-    DishPreviewComponent
+    DishComponent
   ]
 })
 export class DishModule { }
