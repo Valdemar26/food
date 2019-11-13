@@ -1,0 +1,81 @@
+@import "../../../../assets/mixins/mixin-buttons";
+@import "../../../../assets/variables";
+@include btn();
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+
+    &.alert-info {
+      color: $dark-green;
+      background-color: $light-gray;
+      border-color: $dark-gray;
+    }
+  }
+
+  .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: $white;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    width: 50%;
+    padding: 10px;
+
+    .card-header {
+      padding: .75rem 1.25rem;
+      margin-bottom: 0;
+      background-color: rgba(0,0,0,.03);
+      border-bottom: 1px solid rgba(0,0,0,.125);
+
+      &:first-child {
+        border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+      }
+    }
+
+    .card-body {
+      form {
+        .form-group {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 20px;
+          position: relative;
+
+          input {
+            flex: 0 0 250px;
+            border: 1px solid $gray;
+            border-radius: 5px;
+            padding-left: 5px;
+          }
+        }
+
+        .invalid-feedback {
+          position: absolute;
+          top: 15px;
+          color: $fire;
+        }
+
+        .btn-wrapper {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
