@@ -1,8 +1,3 @@
-<!--<div class="bread-crumb">-->
-<!--  Головна / {{rootLocation}} / {{pointLocation}}-->
-<!--</div>-->
-
-
 <div class="dish-item-wrapper">
   <img [src]="dish?.imageUrl" alt="{{ dish?.name }}">
   <div class="description">
@@ -12,7 +7,7 @@
 
     <app-counter #counterComponent> </app-counter>
 
-    <p class="price">
+    <p class="price" [ngClass]="{'emptyOrder': !counterComponent.counter.value }">
       {{ counterComponent.counter.value === 0 ? dish?.price : dish?.price * counterComponent.counter.value }}грн.
     </p>
 

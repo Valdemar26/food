@@ -33,6 +33,14 @@ header {
           }
         }
 
+        p {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 100px;
+          padding-left: 5px;
+        }
+
         img {
           width: 150px;
           height: auto;

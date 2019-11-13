@@ -12,9 +12,9 @@ const routes: Routes = [
       .then(m => m.RestaurantModule), data: {breadcrumb: 'Ресторан'}
   },
   {
-    path: 'restaurant/:id',
+    path: 'restaurant/:type/:id',
     loadChildren: () => import(`./components/dish-preview/dish.module`)
-      .then(m => m.DishModule), data: {breadcrumb: `id`}
+      .then(m => m.DishModule)
   },
   { path: 'rations', loadChildren: () => import(`./rations/rations.module`).then(m => m.RationsModule) },
   { path: 'contacts', loadChildren: () => import(`./contacts/contacts.module`).then(m => m.ContactsModule) },
