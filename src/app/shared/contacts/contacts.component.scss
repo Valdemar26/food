@@ -21,34 +21,34 @@ agm-map {
   grid-template-rows: 1fr 1fr;
 
   .top {
-    img {
+    video {
+      height: auto;
       width: 100%;
-      height: 200px;
-      object-fit: cover;
+      position: relative;
     }
+}
+.bottom {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+color: $dark-black;
+
+.left {
+
+  img {
+    width: auto;
+    max-height: 200px;
+    object-fit: cover;
+    margin: 0 auto;
   }
-  .bottom {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    color: $dark-black;
+}
 
-    .left {
+.center {
+  background-color: $light;
+  //color: $white;
+}
 
-      img {
-        width: auto;
-        max-height: 200px;
-        object-fit: cover;
-        margin: 0 auto;
-      }
-    }
-
-    .center {
-      background-color: $light;
-      //color: $white;
-    }
-
-    .right {
-      background-color: $gray;
-    }
-  }
+.right {
+  background-color: $gray;
+}
+}
 }

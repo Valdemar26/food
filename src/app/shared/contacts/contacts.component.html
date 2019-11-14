@@ -1,21 +1,26 @@
 
-<!--<div class="wrapper">-->
-<!--  <img src="../../../assets/img/brandaffair.png" alt="contact">-->
-<!--</div>-->
-
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker *ngFor="let point of points" [latitude]="point.lat" [longitude]="point.lng"></agm-marker>
-</agm-map>
 
 <div class="wrap">
   <div class="top">
-    <img src="../../../assets/img/photo.jpg" alt="photo">
+    <video loop #videoPlayer autoplay >
+      <source src="../../../assets/video/videoplayback.mp4" type="video/mp4" />
+      Browser not supported
+    </video>
   </div>
   <div class="bottom">
     <div class="left">
-      <img src="../../../assets/img/gmap.png" alt="google maps"> <!-- todo change on real google maps -->
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="9">
+        <ng-container *ngFor="let point of points">
+          <agm-marker  [latitude]="point.lat" [longitude]="point.lng"></agm-marker>
+          <agm-circle [latitude]="+point.lat" [longitude]="+point.lng"
+                      [radius]="5000"
+                      [fillColor]="'red'"
+                      [circleDraggable]="false"
+                      [editable]="false">
+          </agm-circle>
+        </ng-container>
+
+      </agm-map>
     </div>
     <div class="center">
       <h2>Meet Us</h2>

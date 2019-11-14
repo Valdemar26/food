@@ -49,7 +49,7 @@ Thumbs.db
 package-lock.json
 
 # environments
-src/environments/
+src/environments/environment.ts
 /server/.env
 
 # server.js
