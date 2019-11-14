@@ -1,0 +1,54 @@
+@import "../../../assets/variables";
+
+agm-map {
+  height: 300px;
+}
+
+.wrapper {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+
+  img {
+    max-width: 600px;
+    height: auto;
+  }
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  .top {
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+  .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: $dark-black;
+
+    .left {
+
+      img {
+        width: auto;
+        max-height: 200px;
+        object-fit: cover;
+        margin: 0 auto;
+      }
+    }
+
+    .center {
+      background-color: $light;
+      //color: $white;
+    }
+
+    .right {
+      background-color: $gray;
+    }
+  }
+}

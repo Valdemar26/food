@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "server": "env-cmd -f server/.env nodemon server/app.js",
-    "start": "concurrently \"ng serve --port=4300\" \"json-server --watch --port=3100 server/db.json\"",
+    "start": "concurrently \"ng serve --port=4300\" \"json-server --watch --port=3100 server/db.json\" \"env-cmd -f server/.env nodemon server/app.js\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -12,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0",
     "@angular/animations": "~8.2.5",
     "@angular/common": "~8.2.5",
     "@angular/compiler": "~8.2.5",

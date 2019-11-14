@@ -5,8 +5,8 @@ export const environment = {
   production: false,
   localServer: 'http://localhost:3000',
   authUserMail: 'valdemarrr26@gmail.com',
-  authUserPassword: '102938qwerty!!!'
-
+  authUserPassword: '102938qwerty!!!',
+  apiKeyForGoogleMaps: 'AIzaSyDO_QPY-Nj19-i7PLwCG4fZjAkD5Smx194'
 };
 
 /*

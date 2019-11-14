@@ -13,7 +13,7 @@ export class DishesService {
 
   private baseUrl = 'http://localhost:3100';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAllDishes(): Observable<any> {
     return this.http.get(`${this.baseUrl}/restaurant`).pipe(

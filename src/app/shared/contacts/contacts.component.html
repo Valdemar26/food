@@ -1,1 +1,28 @@
-<p>contacts works!</p>
+
+<!--<div class="wrapper">-->
+<!--  <img src="../../../assets/img/brandaffair.png" alt="contact">-->
+<!--</div>-->
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker *ngFor="let point of points" [latitude]="point.lat" [longitude]="point.lng"></agm-marker>
+</agm-map>
+
+<div class="wrap">
+  <div class="top">
+    <img src="../../../assets/img/photo.jpg" alt="photo">
+  </div>
+  <div class="bottom">
+    <div class="left">
+      <img src="../../../assets/img/gmap.png" alt="google maps"> <!-- todo change on real google maps -->
+    </div>
+    <div class="center">
+      <h2>Meet Us</h2>
+      <p>+380 00 000 00</p>
+    </div>
+    <div class="right">
+      <h2>Pitch Us</h2>
+    </div>
+  </div>
+</div>

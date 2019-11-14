@@ -1,3 +1,5 @@
+@import "../../../../assets/variables";
+
 ul {
   display: flex;
   width: auto;
@@ -8,7 +10,7 @@ ul {
     padding: 10px;
 
     span {
-      color: firebrick;
+      color: $black;
       cursor: pointer;
       font-weight: bold;
       font-style: italic;
