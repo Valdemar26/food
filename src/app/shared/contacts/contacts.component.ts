@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.scss']
 })
-export class ContactsComponent implements OnInit {
+export class ContactsComponent implements OnInit, AfterViewInit {
+  @ViewChild('videoPlayer', {static: true}) videoPlayer: ElementRef;
   lat = 49.848485;
   lng = 24.020991;
 
@@ -26,5 +27,10 @@ export class ContactsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
+
+  ngAfterViewInit(): void {
+    this.videoPlayer.nativeElement.play();
+  }
+
 
 }
