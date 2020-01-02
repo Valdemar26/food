@@ -53,7 +53,17 @@
       <input id="build" class="build" formControlName="build">
     </div>
 
-    <button class="submit button" type="submit" [disabled]="!orderRestaurantForm.valid">Підтвердити купівлю</button>
+    <button
+      class="submit button"
+      type="submit"
+      [disabled]="!orderRestaurantForm.valid"
+      [ngClass]="{'disabled': !orderRestaurantForm.valid}">Підтвердити купівлю</button>
+
+    <button
+      class="submit button"
+      *ngIf="isAdmin"
+      [ngClass]="{'disabled': !orderRestaurantForm.valid}"
+      (click)="domToImage($event)">Сформувати файл PDF</button>
 
   </form>
 
@@ -61,6 +71,10 @@
 
   <div class="buy" *ngIf="dishes && dishes.length">
     <p>Всього до сплати: {{ getTotalPrice() }}грн</p>
+  </div>
+
+  <div id="node">
+    <img src="../../../../../assets/img/breakfast.jpg" alt="" style="width: 100px; height: auto;">
   </div>
 
 </div>

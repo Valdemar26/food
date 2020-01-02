@@ -1,6 +1,5 @@
 import {
   Component,
-  ComponentFactory,
   ComponentFactoryResolver,
   ComponentRef,
   OnDestroy,
@@ -8,9 +7,11 @@ import {
   ViewChild,
   ViewContainerRef
 } from '@angular/core';
+import domToImage from 'dom-to-image';
+
 import { DishesService } from '../../../services/dishes.service';
 import { DishInterface } from '../../../interfaces/dish.interface';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-restaurant-basket',
@@ -21,6 +22,7 @@ export class RestaurantBasketComponent implements OnInit, OnDestroy {
   dishes: DishInterface[];
   arrayOfDishes;
   orderRestaurantForm: FormGroup;
+  isAdmin: boolean;
 
   @ViewChild('personalData', { read: ViewContainerRef, static: false }) container;
   componentRef: ComponentRef<any>;
@@ -30,6 +32,24 @@ export class RestaurantBasketComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.getDishes();
     this.initForm();
+    this.isAdmin = true;
+  }
+
+  domToImage(event) {
+    console.log(event);
+    const node = document.getElementById('node');
+    console.log(node);
+
+    domToImage.toPng(node)
+      .then( (dataUrl) => {
+        console.log('dataUrl: ', dataUrl);
+        const img = new Image();
+        img.src = dataUrl;
+        document.body.appendChild(img);
+      })
+      .catch( (error) => {
+        console.error('oops, something went wrong!', error);
+      });
   }
 
   getDishes() {
