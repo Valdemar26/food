@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
 
-    this.dishService.restaurantBasket$.asObservable().subscribe(
+    this.dishService.restaurantBasket.subscribe(
       basket => {
         this.basket = basket;
         console.log(this.basket);
@@ -39,7 +39,8 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.authenticationService.logout();
     this.router.navigate(['/auth/login']);
-    this.dishService.restaurantBasket$.next(null);
+    this.dishService.updateRestaurantBasketState(null);
+    // this.dishService.restaurantBasket$.next(null);
     this.userMenu = false;
   }
 

@@ -8,16 +8,23 @@ import { User } from '../models/user';
 @Injectable({ providedIn: 'root' })
 
 export class AuthenticationService {
-  private currentUserSubject: BehaviorSubject<User>;
+
+  private currentUserSubject$: BehaviorSubject<User>;
   public currentUser: Observable<User>;
+  currentUserState = [];
 
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-    this.currentUser = this.currentUserSubject.asObservable();
+    this.currentUserSubject$ = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+    this.currentUser = this.currentUserSubject$.asObservable();
   }
 
   public get currentUserValue(): User {
-    return this.currentUserSubject.value;
+    return this.currentUserSubject$.value;
+  }
+
+  updateCurrentUser(currentUserState) {
+    this.currentUserSubject$.next(currentUserState);
+    this.currentUserState = currentUserState;
   }
 
   login(email: string, password: string) {
@@ -25,7 +32,8 @@ export class AuthenticationService {
       .pipe(map(user => {
         if (user && user.token) {
           localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user);
+          this.updateCurrentUser(user);
+          // this.currentUserSubject$.next(user);
         }
 
         return user;
@@ -33,8 +41,8 @@ export class AuthenticationService {
   }
 
   logout() {
-    // remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(null);
+    localStorage.removeItem('currentUser');  // remove user from local storage to log user out
+    this.updateCurrentUser(null);
+    // this.currentUserSubject$.next(null);
   }
 }

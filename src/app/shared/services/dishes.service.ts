@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
-import {filter, map, scan, switchMap, tap} from 'rxjs/operators';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { filter, map, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,21 +14,38 @@ export class DishesService {
   };
   dishLength;
 
-  restaurantBasket$: BehaviorSubject<any> = new BehaviorSubject<any>(null); // todo create Interface to Menu item
-  restaurantMenu: Observable<any>;
   private restaurantMenu$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
+  restaurantMenu: Observable<any>;
+  restaurantMenuState = [];
+
+  private restaurantBasket$: BehaviorSubject<any> = new BehaviorSubject<any>(null); // todo create Interface to Menu item
+  restaurantBasket: Observable<any>;
+  restaurantBasketState = [];
+
+
 
   private baseUrl = 'http://localhost:3100';
 
   constructor(private http: HttpClient) {
     this.restaurantMenu = this.restaurantMenu$.asObservable();
+    this.restaurantBasket = this.restaurantBasket$.asObservable(); // incapsulate
+
     this.getPartOfDishes().subscribe(data => {
       this.dishLength = data.length;
       console.log(data);
     });
 
     this.observer = new IntersectionObserver(this.getPartOfDishes.bind(this, this.dishLength ), this.options);
-    // this.getAllDishes().subscribe(data => console.log(data));
+  }
+
+  updateRestaurantMenuState(menuState) {
+    this.restaurantMenu$.next(menuState);
+    this.restaurantMenuState = menuState;
+  }
+
+  updateRestaurantBasketState(basketState) {
+    this.restaurantBasket$.next(basketState);
+    this.restaurantBasketState = basketState;
   }
 
   getPartOfDishes(offset: number = 0): Observable<any> {
