@@ -25,7 +25,6 @@ export class RestaurantBasketComponent implements OnInit, OnDestroy {
   isAdmin: boolean;
 
   @ViewChild('personalData', { read: ViewContainerRef, static: false }) container;
-  componentRef: ComponentRef<any>;
 
   constructor(private dishService: DishesService, private resolver: ComponentFactoryResolver) { }
 
@@ -53,7 +52,7 @@ export class RestaurantBasketComponent implements OnInit, OnDestroy {
   }
 
   getDishes() {
-    this.dishService.restaurantBasket$.subscribe( (data) => {
+    this.dishService.restaurantBasket.subscribe( (data) => {
       if (data) {
         this.dishes = [...data];
         this.arrayOfDishes = data;
@@ -64,7 +63,8 @@ export class RestaurantBasketComponent implements OnInit, OnDestroy {
   deleteDish(id) {
     this.arrayOfDishes.delete(id);
     console.log(this.dishes);
-    this.dishService.restaurantBasket$.next(this.arrayOfDishes);
+    // this.dishService.restaurantBasket$.next(this.arrayOfDishes);
+    this.dishService.updateRestaurantBasketState(this.arrayOfDishes);
   }
 
   getTotalPrice() {
@@ -86,7 +86,7 @@ export class RestaurantBasketComponent implements OnInit, OnDestroy {
   onSubmit() {
     if (this.orderRestaurantForm.value) {
       const person = this.orderRestaurantForm.value;
-      const order = this.dishService.restaurantBasket$.getValue();
+      const order = this.dishService.restaurantBasketState;
       console.log([...order][0]);
       this.dishService.sendRestaurantOrderToEmail( person, [...order][0] );
 
