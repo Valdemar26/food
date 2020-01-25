@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { JwtInterceptor } from './shared/auth/helpers/jwt.interceptor';
-import { ErrorInterceptor } from './shared/auth/helpers/error.interceptor';
+import { JwtInterceptor } from './product/auth/helpers/jwt.interceptor';
+import { ErrorInterceptor } from './product/auth/helpers/error.interceptor';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 

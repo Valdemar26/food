@@ -4,12 +4,13 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AuthGuard } from './auth/helpers/auth.guard';
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full'},
   { path: 'main', loadChildren: () => import(`./main/main.module`).then(m => m.MainModule), data: {breadcrumb: 'Головна'} },
   { path: 'restaurant',
-    loadChildren: () => import(`./restaurant/restaurant.module`)
-      .then(m => m.RestaurantModule), data: {breadcrumb: 'Ресторан'}
+    loadChildren: () => import(`./restaurant/product.module`)
+      .then(m => m.ProductModule), data: {breadcrumb: 'Ресторан'}
   },
   {
     path: 'restaurant/:type/:id',
@@ -26,7 +27,7 @@ const routes: Routes = [
       .then(m => m.RationBasketModule)
   },
   {
-    path: 'basket-restaurant',
+    path: 'basket-product',
     loadChildren: () => import(`./restaurant/components/restaurant-basket/restaurant-basket.module`)
       .then(m => m.RestaurantBasketModule), canActivate: [AuthGuard]
   },
@@ -37,4 +38,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class SharedRoutingModule { }
+export class ProductsRoutingModule { }

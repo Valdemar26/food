@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RestaurantComponent } from './restaurant.component';
+import { ProductComponent } from './product.component';
 import { FormsModule } from '@angular/forms';
 import { CounterModule } from '../components/counter/counter.module';
 import { LazyLoadDirective } from './lazy-image.directive';
 
 
 const routes: Routes = [
-  { path: '',  component: RestaurantComponent,  children: [
+  { path: '',  component: ProductComponent,  children: [
     ]}
 ];
 
 @NgModule({
   declarations: [
-    RestaurantComponent,
+    ProductComponent,
     LazyLoadDirective
   ],
   imports: [
@@ -25,4 +25,4 @@ const routes: Routes = [
     CounterModule
   ]
 })
-export class RestaurantModule { }
+export class ProductModule { }

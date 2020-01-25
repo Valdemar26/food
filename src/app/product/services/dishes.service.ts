@@ -103,7 +103,7 @@ export class DishesService {
         'Content-Type':  'Access-Control-Allow-Origin',
       })
     };
-    this.http.post('http://localhost:8081/basket-restaurant', {person, order}, httpOptions).subscribe(
+    this.http.post('http://localhost:8081/basket-product', {person, order}, httpOptions).subscribe(
       res => console.log(res)
     );
   }
