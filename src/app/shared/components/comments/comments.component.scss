@@ -1,0 +1,67 @@
+@import "../../../../assets/mixins/mixin-buttons";
+@import "../../../../assets/variables";
+
+@include btn();
+
+.wrapper {
+
+  .comments-head {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 6px 0 8px 20px;
+    justify-content: space-between;
+
+    h3 {
+      font-weight: bold;
+      justify-content: space-between;
+    }
+
+    span {
+      border-bottom: 1px dashed #ccc;
+      cursor: pointer;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  .textarea-wrapper {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 15px;
+
+    img {
+      border-radius: 4px;
+      box-shadow: 0 0 1px 0 #aaa;
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+      object-fit: contain;
+    }
+
+    .textarea {
+      min-height: 22px;
+      margin-bottom: 10px;
+
+      textarea {
+        height: 40px;
+        width: 100%;
+        min-width: 320px;
+      }
+    }
+  }
+
+  .send {
+    display: flex;
+    padding-left: 75px;
+    margin-bottom: 20px;
+    align-items: center;
+
+    button {
+      margin: 0 10px 0 0;
+      font-size: 10px;
+      padding: 12px 30px;
+    }
+  }
+}

@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.post('/basket-restaurant', function (req, res) {
+app.post('/basket-product', function (req, res) {
 console.log('POST: ', req);
   const output = `
     <p>You have a new contact request</p>

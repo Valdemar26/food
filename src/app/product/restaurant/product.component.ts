@@ -4,15 +4,15 @@ import { DishInterface } from '../interfaces/dish.interface';
 import { SlideInOutAnimation } from './animations';
 import { Observable } from 'rxjs';
 import { CounterComponent } from '../components/counter/counter.component';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-restaurant',
-  templateUrl: './restaurant.component.html',
-  styleUrls: ['./restaurant.component.scss'],
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss'],
   animations: [SlideInOutAnimation]
 })
-export class RestaurantComponent implements OnInit {
+export class ProductComponent implements OnInit {
   @ViewChildren('counterComponent') listOfCounterComponents: QueryList<CounterComponent>;
 
   dishes$: Observable<DishInterface[]>;

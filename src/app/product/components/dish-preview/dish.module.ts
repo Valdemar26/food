@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DishComponent } from './dish.component';
 import { CounterModule } from '../counter/counter.module';
+import { SharedModule } from '../../../shared/shared.module';
 
 const routes: Routes = [
   { path: '',  component: DishComponent }
@@ -13,6 +14,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
+    SharedModule,
     CounterModule
   ],
   exports: [
