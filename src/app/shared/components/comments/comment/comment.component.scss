@@ -1,0 +1,58 @@
+.wrapper {
+  padding: 10px;
+  margin-bottom: 10px;
+
+  .author {
+    display: flex;
+
+    img {
+      border-radius: 4px;
+      box-shadow: 0 0 1px 0 #aaa;
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+      object-fit: contain;
+    }
+
+    .wrap {
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 11px;
+        color: #999;
+        border-bottom: 1px dotted #ccc;
+
+        &:first-child {
+          font-weight: bold;
+          text-decoration: underline;
+          color: #000;
+          font-size: 14px;
+          margin-right: 10px;
+        }
+      }
+    }
+    span {
+
+    }
+  }
+
+  .message {
+    padding-left: 55px;
+    margin-bottom: 5px;
+  }
+
+  .bottom {
+    padding-left: 55px;
+    margin-top: 10px;
+
+    span {
+      color: #606983;
+      border-bottom: 1px dashed #606983;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+
+
+}

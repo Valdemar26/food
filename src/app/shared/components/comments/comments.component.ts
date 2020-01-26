@@ -1,31 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { Subscription } from 'rxjs';
 
 import { CommentInterface } from '../interfaces/comment.interface';
+import { CommentsService } from '../../services/comments.service';
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.scss']
 })
-export class CommentsComponent implements OnInit {
+export class CommentsComponent implements OnInit, OnDestroy {
 
-comments: CommentInterface[];
+  comments: CommentInterface[];
+  subscriptions: Subscription = new Subscription();
 
-  constructor() { }
+  constructor(private commentsService: CommentsService) { }
 
   ngOnInit() {
-    this.comments = [
-      {
-        userId: 1,
-        date: new Date().now,
-        message: 'lorem ipsum dolor sit amet123'
-      },
-      {
-        userId: 2,
-        date: new Date().now,
-        message: 'test comments test test'
-      }
-    ];
+    this.getComments();
+  }
+
+  getComments() {
+    const subscription = this.commentsService.getComments().subscribe(data => this.comments = data);
+    this.subscriptions.add(subscription);
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 
 }
